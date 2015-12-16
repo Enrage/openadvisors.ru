@@ -12,7 +12,8 @@ class OurClientsController extends AppController {
 			'conditions' => ['alias' => 'our_clients'],
 			'recursive' => -1
 		])->toArray();
-		$this->set(compact('clients'));
+		$title = 'Наши клиенты';
+		$this->set(compact('clients', 'title'));
 		return;
 	}
 }

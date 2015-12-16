@@ -12,7 +12,8 @@ class OurSoftwareController extends AppController {
 			'conditions' => ['alias' => 'our_software'],
 			'recursive' => -1
 		])->toArray();
-		$this->set(compact('software'));
+		$title = 'Наше программное обеспечение';
+		$this->set(compact('software', 'title'));
 		return;
 	}
 }

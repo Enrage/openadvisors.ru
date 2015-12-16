@@ -12,7 +12,8 @@ class LeanProductionController extends AppController {
 			'conditions' => ['alias' => 'lean_production'],
 			'recursive' => -1
 		])->toArray();
-		$this->set(compact('lean_production'));
+		$title = 'Бережливое производство';
+		$this->set(compact('lean_production', 'title'));
 		return;
 	}
 }

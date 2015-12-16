@@ -12,7 +12,8 @@ class OurPartnersController extends AppController {
 			'order' => ['id' => 'DESC'],
 			'recursive' => -1
 		]);
-		$this->set(compact('partners'));
+		$title = 'Наши партнеры';
+		$this->set(compact('partners', 'title'));
 		return;
 	}
 }

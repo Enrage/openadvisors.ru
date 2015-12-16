@@ -12,10 +12,14 @@ class PostController extends AppController {
 			'conditions' => ['alias' => $alias],
 			'recursive' => -1
 		])->toArray();
+		$title = $post[0]->title;
+		$meta['keywords'] = $post[0]->keywords;
+		$meta['description'] = $post[0]->description;
+
     if (!$post) {
       throw new NotFoundException('Такой страницы нет');
     }
-    $this->set(compact('post'));
+    $this->set(compact('post', 'title', 'meta'));
     return;
 
 		if (!$this->Posts->exists($alias)) {

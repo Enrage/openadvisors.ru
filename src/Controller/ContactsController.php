@@ -12,7 +12,8 @@ class ContactsController extends AppController {
 			'conditions' => ['alias' => 'contacts'],
 			'recursive' => -1
 		])->toArray();
-		$this->set(compact('contacts'));
+		$title = 'Контакты';
+		$this->set(compact('contacts', 'title'));
 		return;
 	}
 }

@@ -12,7 +12,8 @@ class AboutCompanyController extends AppController {
 			'conditions' => ['alias' => 'about_company'],
 			'recursive' => -1
 		])->toArray();
-		$this->set(compact('about_company'));
+		$title = 'О компании';
+		$this->set(compact('about_company', 'title'));
 		return;
 	}
 }

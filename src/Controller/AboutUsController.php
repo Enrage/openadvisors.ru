@@ -12,7 +12,8 @@ class AboutUsController extends AppController {
 			'conditions' => ['alias' => 'about_us'],
 			'recursive' => -1
 		])->toArray();
-		$this->set(compact('about_us'));
+		$title = 'О нас';
+		$this->set(compact('about_us', 'title'));
 		return;
 	}
 }

@@ -3,9 +3,13 @@
 <head>
 	<?= $this->Html->charset() ?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<?= $this->Html->meta('keywords', '') ?>
-	<?= $this->Html->meta('description', '') ?>
-	<title><?=$this->fetch('title') ?></title>
+	<title><?= $title ?></title>
+	<?php if (isset($meta['keywords'])): ?>
+		<?= $this->Html->meta('keywords', $meta['keywords']) ?>
+	<?php endif; ?>
+	<?php if (isset($meta['description'])): ?>
+		<?= $this->Html->meta('description', $meta['description']) ?>
+	<?php endif; ?>
 	<?= $this->Html->css(['main', 'rslider']) ?>
 	<?= $this->Html->script(['jquery', 'less.min', 'responsiveslides.min', 'jcarousel', 'common'], ['block' => 'scriptBottom']) ?>
 	<?= $this->Html->meta('openadvisors.png', '/openadvisors.png', ['type' => 'icon']) ?>
